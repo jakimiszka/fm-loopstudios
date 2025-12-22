@@ -1,0 +1,25 @@
+.flex{
+    display: flex;
+}
+.f-row{
+    flex-direction: row;
+}
+.f-col{
+    flex-direction: column;
+}
+.r-space-between{
+    justify-content: space-between;
+}
+.c-space-evenly{
+    justify-content: space-around;
+}
+.v-center{
+    align-items: center;
+}
+.h-center{
+    justify-content: center;
+}
+.full-screen{
+    width: 100vw;
+    height: 100vh;
+}
