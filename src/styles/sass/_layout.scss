@@ -7,13 +7,17 @@
 .f-col{
     flex-direction: column;
 }
+.center{
+    justify-content: center;
+    align-items: center;
+}
 .r-space-between{
     justify-content: space-between;
 }
 .r-space-around{
     justify-content: space-around;
 }
-.c-space-evenly{
+.c-space-around{
     justify-content: space-around;
 }
 .v-center{

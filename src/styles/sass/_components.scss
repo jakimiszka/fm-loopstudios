@@ -9,10 +9,21 @@
 .menu{
     width: 100%;
     background-color: v.$black;
+    color: v.$white;
 
-    ul{
-        list-style: none;
-        color: v.$white;
-        gap: 1rem;
+    &--items{
+        ul{
+            list-style: none;
+            gap: 1rem;
+        }
+        ul li a { color: white;}
     }
+}
+
+.header{
+    align-items: center;
+}
+
+.footer{
+    justify-content: flex-start;
 }
