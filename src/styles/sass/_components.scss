@@ -1,9 +1,18 @@
 @use './utils' as u;
+@use './variables' as v;
 
 .container{
     width: 100vw;
     height: 100vh;
 }
 
-.card{
+.menu{
+    width: 100%;
+    background-color: v.$black;
+
+    ul{
+        list-style: none;
+        color: v.$white;
+        gap: 1rem;
+    }
 }
