@@ -4,26 +4,67 @@
 .container{
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .menu{
     width: 100%;
-    background-color: v.$black;
+    background-color: transparent;
+    padding: 1rem;
     color: v.$white;
 
     &--items{
         ul{
+            display: none;
             list-style: none;
             gap: 1rem;
         }
         ul li a { color: white;}
     }
+
+    &--mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__hamburger{
+            cursor: pointer;
+            font-size: 2rem;
+        }
+    }
+
+    @include u.breakpoint('large'){
+        &--items{
+            ul{
+                display: flex;
+            }
+        }
+        &--mobile{
+            display: none; 
+        }
+    }
+}
+
+.mainHeader{
+    display: block;
+}
+
+.headerImage > img{   
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
 }
 
 .header{
+    position: absolute;
+    z-index: 10;
     align-items: center;
 }
 
 .footer{
+    position: relative;
     justify-content: flex-start;
+    background-color: black;
 }

@@ -28,7 +28,7 @@ export const Menu = ({
     return (
         <div className={combinedClass}>
             {showLogo && (
-                <div className="logo">
+                <div className="menu logo">
                     <img src={logoSrc} alt={`${variant} logo`} />
                 </div>
             )}
@@ -44,6 +44,9 @@ export const Menu = ({
                         </li>
                     ))}
                 </ul>
+            </div>
+            <div className="menu--mobile">
+                <span className="menu--mobile__hamburger">&#9776;</span>
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
 import { Menu } from "./Menu";
+import { Header } from "./Header";
 
 export const Container = () => {
     const menuItems = [
@@ -11,11 +12,13 @@ export const Container = () => {
 
     return (
         <div className="container">
-            <Menu
-                items={menuItems}
-                variant="header"
-                styles={['flex', 'r-space-between']}
-            />
+            <Header>
+                <Menu
+                    items={menuItems}
+                    variant="header"
+                    styles={['flex', 'r-space-between']}
+                />
+            </Header>
             <Menu
                 items={menuItems}
                 variant="footer"
