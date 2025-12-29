@@ -1,5 +1,7 @@
 import { Menu } from "./Menu";
 import { Header } from "./Header";
+import { Content } from "./Content";
+import { Gallery } from "./Gallery";
 
 export const Container = () => {
     const menuItems = [
@@ -19,6 +21,9 @@ export const Container = () => {
                     styles={['flex', 'r-space-between']}
                 />
             </Header>
+            
+            <Content />
+            <Gallery />
             <Menu
                 items={menuItems}
                 variant="footer"
