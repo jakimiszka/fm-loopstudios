@@ -23,7 +23,8 @@ export const Container = () => {
             </Header>
             
             <Content />
-            <Gallery />
+            <Content />
+            {/* <Gallery /> */}
             <Menu
                 items={menuItems}
                 variant="footer"

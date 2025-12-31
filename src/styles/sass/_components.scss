@@ -3,10 +3,22 @@
 
 .container{
     width: 100vw;
-    height: 100%;
+    height: auto;
+    min-height: 100vh;
+
+    min-width: 330px;   // pro-max width
+    max-width: 440px;  // small mobile width
+
+    @include u.breakpoint('medium'){
+        max-width: 768px;
+    }
+
+    @include u.breakpoint('large'){
+        max-width: 1440px;
+    }
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .menu{
@@ -47,6 +59,16 @@
     }
 }
 
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+}
+
 .mainHeader{
     display: block;
     height: 40vh; /* reduce header height; adjust as needed */
@@ -55,7 +77,7 @@
 }
 
 .headerImage > img{   
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;

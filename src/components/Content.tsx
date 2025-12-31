@@ -6,7 +6,7 @@ export const Content = () => {
         <main className="content">
             <section className="content--intro r-space-around">
                 <div className="content--intro__text f-col r-space-between">
-                    <img src={interactice} alt="Interactive" />
+                    {/* <img src={interactice} alt="Interactive" /> */}
                     <h1>THE LEADER IN INTERACTIVE VR</h1>
                     <p>
                         The world is getting smaller and we’re becoming more mobile. 
@@ -28,7 +28,7 @@ export const Content = () => {
             </section>
             <section className="content--creations f-col r-space-around">
                 <h2>Our Creations</h2>
-                <Gallery />
+                {/* <Gallery /> */}
                 <button className="btn btn--see-all">See All</button>
             </section>
         </main>
