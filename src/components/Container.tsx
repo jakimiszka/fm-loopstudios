@@ -20,11 +20,8 @@ export const Container = () => {
                     variant="header"
                     styles={['flex', 'r-space-between']}
                 />
-            </Header>
-            
+            </Header> 
             <Content />
-            <Content />
-            {/* <Gallery /> */}
             <Menu
                 items={menuItems}
                 variant="footer"
