@@ -1,4 +1,8 @@
 import logoImage from '../assets/logo.svg';
+import facebookIcon from '../assets/icon-facebook.svg';
+import twitterIcon from '../assets/icon-twitter.svg';
+import pinterestIcon from '../assets/icon-pinterest.svg';
+import instagramIcon from '../assets/icon-instagram.svg';
 
 interface MenuItem {
     text: string;
@@ -10,6 +14,8 @@ interface MenuProps {
     styles?: string[];
     variant?: 'header' | 'footer';
     showLogo?: boolean;
+    showSocials?: boolean;
+    showRights?: boolean;
     logoSrc?: string;
     className?: string;
 }
@@ -19,6 +25,8 @@ export const Menu = ({
     styles = [],
     variant = 'header',
     showLogo = true,
+    showSocials = variant === 'footer',
+    showRights = variant === 'footer',
     logoSrc = logoImage,
     className = ''
 }: MenuProps) => {
@@ -48,6 +56,27 @@ export const Menu = ({
             <div className="menu--mobile">
                 <span className="menu--mobile__hamburger">&#9776;</span>
             </div>
+            {showSocials && (
+                <div className='menu--socials'>
+                    <span className="menu--socials__facebook">
+                        <img src={facebookIcon} alt="Facebook" />
+                    </span>
+                    <span className="menu--socials__twitter">
+                        <img src={twitterIcon} alt="Twitter" />
+                    </span>
+                    <span className="menu--socials__pinterest">
+                        <img src={pinterestIcon} alt="Pinterest" /> 
+                    </span>
+                    <span className="menu--socials__instagram">
+                        <img src={instagramIcon} alt="Instagram" />
+                    </span>
+                </div>
+            )}
+            {showRights && (
+                <div className='menu--rights'>
+                    <p>&copy; 2024 Loopstudios. All rights reserved.</p>
+                </div>
+            )}
         </div>
     );
 }

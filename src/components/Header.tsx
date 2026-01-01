@@ -5,6 +5,9 @@ export const Header = ({ children }: { children: React.ReactNode }) => {
     <header className="mainHeader headerImage">
       {children}
       <img src={imageHero} alt="background image" />
+      <div className="headerMessage">
+        <h1>IMMERSIVE EXPERIENCES THAT DELIVER</h1>
+      </div>
     </header>
   );
 }

@@ -18,7 +18,7 @@ export const Container = () => {
                 <Menu
                     items={menuItems}
                     variant="header"
-                    styles={['flex', 'r-space-between']}
+                    styles={['flex', 'r-space-between', 'headerMenu']}
                 />
             </Header> 
             <Content />
@@ -26,7 +26,7 @@ export const Container = () => {
                 items={menuItems}
                 variant="footer"
                 showLogo={true}
-                styles={['flex', 'f-col']}
+                styles={['flex', 'f-col', 'footerMenu']}
             />
         </div>
     );

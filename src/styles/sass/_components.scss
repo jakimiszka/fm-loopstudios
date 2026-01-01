@@ -6,8 +6,8 @@
     height: auto;
     min-height: 100vh;
 
-    min-width: 330px;   // pro-max width
-    max-width: 440px;  // small mobile width
+    min-width: 330px;
+    max-width: 440px;
 
     @include u.breakpoint('medium'){
         max-width: 768px;
@@ -27,7 +27,61 @@
     padding: 1rem;
     color: v.$white;
 
-    &--items{
+    &--socials{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+
+        img{
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    }
+
+    &--rights{
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 0.75rem;
+        color: grey;
+    }
+}
+
+.footerMenu{
+    width: 100%;
+    background-color: black;
+    padding: 2rem 1rem;
+    color: v.$white;
+
+    .menu--items{
+        ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+        ul li a { color: white;}
+    }
+
+    .menu--mobile{
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.headerMenu{
+    width: 100%;
+    background-color: transparent;
+    padding: 1rem;
+    color: v.$white;
+
+    .menu--items{
         ul{
             display: none;
             list-style: none;
@@ -36,7 +90,7 @@
         ul li a { color: white;}
     }
 
-    &--mobile{
+    .menu--mobile{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -48,15 +102,15 @@
     }
 
     @include u.breakpoint('large'){
-        &--items{
-            ul{
-                display: flex;
+            .menu--items{
+                ul{
+                    display: flex;  
+                }
+            }
+            .menu--mobile{
+                display: none;
             }
         }
-        &--mobile{
-            display: none; 
-        }
-    }
 }
 
 .content{
@@ -65,14 +119,102 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: 4rem;
     padding: 2rem 1rem;
-    gap: 1.5rem;
+    gap: 4.5rem;
 
-    img{
+    &--intro{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+
+        @include u.breakpoint('medium'){
+            flex-direction: row;
+            text-align: left;
+            justify-content: space-between;
+        }
+
+        img{
+            max-width: 300px;
+
+            @include u.breakpoint('medium'){
+                max-width: 300px;
+            }
+
+            @include u.breakpoint('large'){
+                max-width: 400px;
+            }
+        }
+
+        h1{
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+
+            @include u.breakpoint('medium'){
+                font-size: 2rem;
+            }
+
+            @include u.breakpoint('large'){
+                font-size: 2.5rem;
+            }
+        }
+
+        p{
+            color: grey;
+            line-height: 1.6;
+        }
+    }
+
+    &--gallery{
         width: 100%;
-        height: auto;
-        // max-width: 400px;
-        object-fit: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+
+        h1{
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            font-weight: normal;
+
+            @include u.breakpoint('medium'){
+                font-size: 2rem;
+            }
+
+            @include u.breakpoint('large'){
+                font-size: 2.5rem;
+            }
+        }
+
+        &__title{
+            width: 100%;
+            font-size: 1rem;
+            letter-spacing: 2px;
+
+            @include u.breakpoint('medium'){
+                font-size: 1.5rem;
+            }
+
+            @include u.breakpoint('large'){
+                font-size: 2rem;
+            }
+        }
+
+        .btn{
+            background-color: transparent;
+            border: 1px solid v.$black;
+            color: v.$black;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 2px;
+
+            &:hover{
+                background-color: v.$black;
+                color: v.$white;
+            }
+        }
     }
 }
 
@@ -82,23 +224,25 @@
     justify-content: center;
     gap: 1rem;
 
-    img{
-        width: 100%;
-        height: auto;
-        object-fit: cover; 
-    }
-
     &--item{
         flex: 1 1 100%;
         position: relative; 
 
+        img{
+            width: 100%;
+            height: 20vh;
+            object-fit: cover;
+        }
+        
         h2{
             color: v.$white;
             position: absolute;
-            top: 65%;
+            top: 50%;
             left: 5%;
             font-size: 1.5rem;
             letter-spacing: 2px;
+            text-align: left;
+            font-weight: 300;
         }
 
         @include u.breakpoint('large'){
@@ -106,9 +250,14 @@
 
              img{
                 width: 100%;
-                height: 50vh;
+                height: 600px;
                 object-fit: cover;
-                aspect-ratio: 16 / 9; 
+            }
+
+            h2{
+                font-size: 2rem;
+                top: 80%;
+                left: 5%;
             }
         }
     }
@@ -116,7 +265,7 @@
 
 .mainHeader{
     display: block;
-    height: 40vh; /* reduce header height; adjust as needed */
+    height: 50vh;
     position: relative;
     overflow: hidden;
 }
@@ -128,6 +277,33 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.headerMessage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: v.$white;
+    text-align: center;
+    padding: 0 1rem;
+    border: 1px solid v.$white;
+    padding: 1rem;
+
+    h1{
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        text-align: left;
+        padding: 0;
+
+        @include u.breakpoint('medium'){
+            font-size: 2.5rem;
+        }
+
+        @include u.breakpoint('large'){
+            font-size: 3rem;
+        }
+    }
 }
 
 .header{
