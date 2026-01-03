@@ -18,6 +18,8 @@ interface MenuProps {
     showRights?: boolean;
     logoSrc?: string;
     className?: string;
+    isCentered?: boolean;
+    onHamburgerClick?: () => void;
 }
 
 export const Menu = ({
@@ -28,7 +30,8 @@ export const Menu = ({
     showSocials = variant === 'footer',
     showRights = variant === 'footer',
     logoSrc = logoImage,
-    className = ''
+    className = '',
+    onHamburgerClick
 }: MenuProps) => {
     const baseClass = 'menu ' + (variant === 'header' ? 'header' : 'footer');
     const combinedClass = `${baseClass} ${className} ${styles.join(' ')}`.trim();
@@ -53,7 +56,7 @@ export const Menu = ({
                     ))}
                 </ul>
             </div>
-            <div className="menu--mobile">
+            <div className="menu--mobile" onClick={onHamburgerClick}>
                 <span className="menu--mobile__hamburger">&#9776;</span>
             </div>
             {showSocials && (

@@ -52,6 +52,41 @@
     background-color: black;
     padding: 2rem 1rem;
     color: v.$white;
+    text-align: center;
+
+    @include u.breakpoint('medium'){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0;
+        align-items: center;
+        padding: 2rem;
+
+        .menu.logo{
+            order: 1;
+            text-align: left;
+            padding-left: 1rem;
+        }
+
+        .menu--items{
+            order: 3;
+            justify-self: start;
+            padding-left: 1rem;
+        }
+
+        .menu--socials{
+            order: 2;
+            padding-right: 1rem;
+            justify-self: end;
+        }
+
+        .menu--rights{
+            order: 4;
+            height: 100%;
+            padding-right: 1rem;
+            justify-self: end;
+            align-self: center;
+        }
+    }
 
     .menu--items{
         ul{
@@ -64,6 +99,11 @@
             flex-wrap: wrap;
             margin-top: 2rem;
             margin-bottom: 3rem;
+
+            @include u.breakpoint('medium'){
+                margin: 0;
+                flex-direction: row;
+            }
         }
         ul li a { color: white;}
     }
@@ -128,11 +168,25 @@
         flex-direction: column;
         align-items: center;
         gap: 2.5rem;
+        position: relative;
+        width: 100%;
 
         @include u.breakpoint('medium'){
             flex-direction: row;
             text-align: left;
             justify-content: space-between;
+        }
+
+        &__text{
+
+            @include u.breakpoint('large'){
+                max-width: 45%;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                background-color: v.$white;
+                padding: 2rem;
+            }
         }
 
         img{
@@ -143,7 +197,8 @@
             }
 
             @include u.breakpoint('large'){
-                max-width: 400px;
+                flex: 0 0 65%;
+                max-width: 65%;
             }
         }
 
@@ -161,6 +216,7 @@
         }
 
         p{
+            margin-top: 1rem;
             color: grey;
             line-height: 1.6;
         }
@@ -173,6 +229,13 @@
         align-items: center;
         gap: 2rem;
 
+        @include u.breakpoint('large'){
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         h1{
             font-size: 1.5rem;
             letter-spacing: 2px;
@@ -184,6 +247,8 @@
 
             @include u.breakpoint('large'){
                 font-size: 2.5rem;
+                width: 50%;
+                text-align: left;
             }
         }
 
@@ -198,6 +263,7 @@
 
             @include u.breakpoint('large'){
                 font-size: 2rem;
+                order: 0;
             }
         }
 
@@ -209,6 +275,11 @@
             cursor: pointer;
             font-size: 1rem;
             letter-spacing: 2px;
+            order: 2;
+
+            @include u.breakpoint('large'){
+                order: 0;
+            }
 
             &:hover{
                 background-color: v.$black;
@@ -316,4 +387,49 @@
     position: relative;
     justify-content: flex-start;
     background-color: black;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    width: 100%;
+    height: 100vh;
+    z-index: 15;
+    background-color: black;
+
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    
+    &--open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+        img{
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            width: 35px;
+            height: auto;
+        }
+
+        ul{
+            list-style: none;
+            color: v.$white;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        ul li a { color: white;}
 }
